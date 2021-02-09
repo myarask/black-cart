@@ -53,3 +53,5 @@ Service modules are to be named after the resource being modified. The first arg
 - Tests for pages and components
 - More specific types (as opposed to 'any')
 - Account for different screen sizes
+- Tidy up description
+- Internationalization

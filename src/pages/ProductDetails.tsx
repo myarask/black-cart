@@ -25,7 +25,14 @@ const ProductDetails = () => {
     Cart.addItem(id, { size });
   };
 
-  const { targetMarket, title, price, sizes, images } = product.data;
+  const {
+    targetMarket,
+    title,
+    price,
+    sizes,
+    images,
+    description,
+  } = product.data;
 
   return (
     <ProductGrid>
@@ -75,6 +82,10 @@ const ProductDetails = () => {
         </section>
         <section>
           <JumboButton onClick={handleAddToCart}>Add to Cart</JumboButton>
+        </section>
+        <section>
+          <h2>Description</h2>
+          <p>{description}</p>
         </section>
       </article>
     </ProductGrid>
