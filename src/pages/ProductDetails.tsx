@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductGrid, SizeButtons, JumboButton } from "../components";
-import { Products } from "../services";
+import { Products, Cart } from "../services";
 
 const ProductDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -17,6 +17,13 @@ const ProductDetails = () => {
     // Loading product info. Should render progress indicator instead.
     return null;
   }
+
+  const handleAddToCart = () => {
+    if (!size) return; // Handle case in which no size was selected
+
+    // TODO: increment counter in app after adding item
+    Cart.addItem(id, { size });
+  };
 
   const { targetMarket, title, price, sizes } = product.data;
 
@@ -44,7 +51,7 @@ const ProductDetails = () => {
           <SizeButtons sizes={sizes} size={size} setSize={setSize} />
         </section>
         <section>
-          <JumboButton onClick={() => {}}>Add to Cart</JumboButton>
+          <JumboButton onClick={handleAddToCart}>Add to Cart</JumboButton>
         </section>
       </article>
     </ProductGrid>
