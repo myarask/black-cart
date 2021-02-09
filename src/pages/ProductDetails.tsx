@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ProductGrid, SizeButton } from "../components";
+import { ProductGrid, SizeButtons } from "../components";
 import { Products } from "../services";
 
 const ProductDetails = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<any>(null);
+  const [size, setSize] = useState<null | number>(null);
 
   useEffect(() => {
     // This is a basic data-loading mechanism. React Query is a viable upgrade.
@@ -40,18 +41,7 @@ const ProductDetails = () => {
           </h1>
         </section>
         <section>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <span style={{ marginRight: "1rem" }}>SIZE:</span>
-            {sizes.map((size: number) => (
-              <SizeButton key={size}>{size}</SizeButton>
-            ))}
-          </div>
+          <SizeButtons sizes={sizes} size={size} setSize={setSize} />
         </section>
       </article>
     </ProductGrid>
