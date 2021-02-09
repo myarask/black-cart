@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ProductGrid } from "../components";
+import { ProductGrid, SizeButton } from "../components";
 import { Products } from "../services";
 
 const ProductDetails = () => {
@@ -17,7 +17,7 @@ const ProductDetails = () => {
     return null;
   }
 
-  const { targetMarket, title, price } = product.data;
+  const { targetMarket, title, price, sizes } = product.data;
 
   return (
     <ProductGrid>
@@ -25,9 +25,12 @@ const ProductDetails = () => {
       <section>product details {id}</section>
       <article>
         <section>
-          <span>{targetMarket}</span>
-          <h1>{title}</h1>
-          <h1>
+          <div style={{ textAlign: "center" }}>{targetMarket}</div>
+          <h1 style={{ textTransform: "uppercase", textAlign: "center" }}>
+            {title}
+          </h1>
+          <h1 style={{ textAlign: "center" }}>
+            {/* Polyfill needed for some browsers */}
             {new Intl.NumberFormat("en-CA", {
               maximumFractionDigits: 0,
               minimumFractionDigits: 0,
@@ -35,6 +38,20 @@ const ProductDetails = () => {
               currency: price.currency,
             }).format(price.amount)}
           </h1>
+        </section>
+        <section>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <span style={{ marginRight: "1rem" }}>SIZE:</span>
+            {sizes.map((size: number) => (
+              <SizeButton key={size}>{size}</SizeButton>
+            ))}
+          </div>
         </section>
       </article>
     </ProductGrid>

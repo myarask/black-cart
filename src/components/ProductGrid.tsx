@@ -4,7 +4,7 @@ import React from "react";
 // desktop, tablet, and mobile are fluid
 const ProductGrid = (props: any) => (
   <main
-    style={{ display: "grid", gridTemplateColumns: "100px auto 400px" }}
+    style={{ display: "grid", gridTemplateColumns: "100px auto 600px" }}
     {...props}
   />
 );
