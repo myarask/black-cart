@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ProductGrid } from "../components";
 import { Products } from "../services";
 
 const ProductDetails = () => {
@@ -10,13 +11,18 @@ const ProductDetails = () => {
     Products.retrieve(id).then(setProduct);
   }, [id, setProduct]);
 
-  // console.log(product);
   if (!product) {
-    // Loading product info
+    // Loading product info. Should render progress indicator instead.
     return null;
   }
 
-  return <div>product details {id}</div>;
+  return (
+    <ProductGrid>
+      <div>1</div>
+      <div>product details {id}</div>
+      <div>1</div>
+    </ProductGrid>
+  );
 };
 
 export { ProductDetails };
