@@ -16,19 +16,40 @@ mock.onGet("/products/1").reply(200, {
   images: {
     // Lots of redundency, but there may be cases where alt definitions are different.
     1: {
-      src:
-        "https://cdn.shopify.com/s/files/1/0646/1285/products/Capri-Triple-White-Lowtop-Men-Koio-1_80x@2x.progressive.png.jpg?v=1593118532",
-      alt: "Low Top Leather Sneaker in White | Capri Triple White | KOIO",
+      small: {
+        src:
+          "https://cdn.shopify.com/s/files/1/0646/1285/products/Capri-Triple-White-Lowtop-Men-Koio-1_80x@2x.progressive.png.jpg?v=1593118532",
+        alt: "Low Top Leather Sneaker in White | Capri Triple White | KOIO",
+      },
+      big: {
+        src:
+          "https://cdn.shopify.com/s/files/1/0646/1285/products/Capri-Triple-White-Lowtop-Men-Koio-1_1200x.progressive.png.jpg?v=1593118532",
+        alt: "Low Top Leather Sneaker in White | Capri Triple White | KOIO",
+      },
     },
     2: {
-      src:
-        "https://cdn.shopify.com/s/files/1/0646/1285/products/Capri-Triple-White-Lowtop-Men-Koio-2_80x@2x.progressive.png.jpg?v=1593118532",
-      alt: "Low Top Leather Sneaker in White | Capri Triple White | KOIO",
+      small: {
+        src:
+          "https://cdn.shopify.com/s/files/1/0646/1285/products/Capri-Triple-White-Lowtop-Men-Koio-2_80x@2x.progressive.png.jpg?v=1593118532",
+        alt: "Low Top Leather Sneaker in White | Capri Triple White | KOIO",
+      },
+      big: {
+        src:
+          "https://cdn.shopify.com/s/files/1/0646/1285/products/Capri-Triple-White-Lowtop-Men-Koio-2_1200x.progressive.png.jpg?v=1593118532",
+        alt: "Low Top Leather Sneaker in White | Capri Triple White | KOIO",
+      },
     },
     3: {
-      src:
-        "https://cdn.shopify.com/s/files/1/0646/1285/products/Capri-Triple-White-Lowtop-Men-Koio-3_80x@2x.progressive.png.jpg?v=1593118532",
-      alt: "Low Top Leather Sneaker in White | Capri Triple White | KOIO",
+      small: {
+        src:
+          "https://cdn.shopify.com/s/files/1/0646/1285/products/Capri-Triple-White-Lowtop-Men-Koio-3_80x@2x.progressive.png.jpg?v=1593118532",
+        alt: "Low Top Leather Sneaker in White | Capri Triple White | KOIO",
+      },
+      big: {
+        src:
+          "https://cdn.shopify.com/s/files/1/0646/1285/products/Capri-Triple-White-Lowtop-Men-Koio-3_1200x.progressive.png.jpg?v=1593118532",
+        alt: "Low Top Leather Sneaker in White | Capri Triple White | KOIO",
+      },
     },
   },
 });

@@ -1,14 +1,14 @@
 import React from "react";
 
-const SizeButton = (props: any) => (
+const SizeButton = ({ active, ...rest }: any) => (
   <button
     style={{
       width: "50px",
       height: "50px",
       margin: "5px",
-      borderColor: props.active ? "black" : undefined,
+      borderColor: active ? "black" : undefined,
     }}
-    {...props}
+    {...rest}
   />
 );
 

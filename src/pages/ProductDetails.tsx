@@ -25,14 +25,37 @@ const ProductDetails = () => {
     Cart.addItem(id, { size });
   };
 
-  const { targetMarket, title, price, sizes } = product.data;
+  const { targetMarket, title, price, sizes, images } = product.data;
 
   return (
     <ProductGrid>
-      <section>1</section>
-      <section>product details {id}</section>
+      <section>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            position: "sticky",
+            top: "0",
+          }}
+        >
+          {Object.values(images).map((image: any) => (
+            <img src={image.small.src} alt={image.small.alt} />
+          ))}
+        </div>
+      </section>
+      <section>
+        {Object.values(images).map((image: any) => (
+          <img
+            id="n-3"
+            width="400px"
+            src={image.big.src}
+            alt={image.big.alt}
+            style={{ margin: "1rem" }}
+          />
+        ))}
+      </section>
       <article>
-        <section>
+        <section style={{ position: "sticky", top: "0", background: "white" }}>
           <div style={{ textAlign: "center" }}>{targetMarket}</div>
           <h1 style={{ textTransform: "uppercase", textAlign: "center" }}>
             {title}
