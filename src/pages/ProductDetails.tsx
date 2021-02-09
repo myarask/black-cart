@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ProductGrid, SizeButtons } from "../components";
+import { ProductGrid, SizeButtons, JumboButton } from "../components";
 import { Products } from "../services";
 
 const ProductDetails = () => {
@@ -42,6 +42,9 @@ const ProductDetails = () => {
         </section>
         <section>
           <SizeButtons sizes={sizes} size={size} setSize={setSize} />
+        </section>
+        <section>
+          <JumboButton onClick={() => {}}>Add to Cart</JumboButton>
         </section>
       </article>
     </ProductGrid>
